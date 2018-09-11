@@ -1,0 +1,91 @@
+Java
+-------
+Java is an Object Oriented and 
+Platform Independent programming language.
+
+
+Object Oriented Programming 
+------------------------------
+Object Oriented Programming is a programming 
+paradigm that uses concepts like
+* Encapsulation
+* Polymorphism
+* Inhertiance
+* Abstraction
+for application development.
+
+
+Encapsulation
+----------------
+Encapsulation is binding the code and data of 
+an entity into one unit.
+The formed unit is termed as a class.
+
+
+Polymorphism
+----------------
+Polymorphism is the ability of an object to 
+perform a task in multiple ways.
+
+
+Inhertiance
+---------------
+Inheritance is deriving sub classes from 
+existing ones.
+There is extension in the abilities of the 
+object.
+
+Abstraction
+---------------
+Abstraction is hiding the implementation details 
+from the user of the object.
+User of the object knows what the object does 
+but is unaware of how it does.
+
+The user of the object is unaffected by the
+changes in the process of operation.
+
+===================================
+
+Platform Dependence
+---------------------------
+Programs developed using a particular language 
+utilize the language API.
+The language API ideally uses the OS API.
+On compilation, the source and API both get 
+compiled.
+As the API internally use the OS API so the 
+compiled binary file (executable) becomes OS 
+compatible and in other words OS dependent.
+
+Platform Independence 
+---------------------------
+Platform Independence is the ability of a 
+software to execute on multiple systems that 
+use different architectures.
+
+Details
+-----------
+Oracle Corporation develops a special software 
+termed as Java Virtual Machine (JVM) for every 
+Operating System (OS).
+
+JVM acts as a platform for execution of Java 
+programs on the underlying OS.
+
+JVM provides support for datatypes, libraries, 
+multithreading, jre, jit compiler, etc for the 
+Java applications.
+
+A Java compiler converts all the classes of a 
+java program into respective binary executable 
+files termed as "bytecode".
+
+Bytecode is inputted to a JVM, that on the fly 
+compiles it and makes it OS compatible, for 
+execution.
+
+It can be said that a compiled Java program 
+is JVM dependent but OS independent.
+
+See PI.png

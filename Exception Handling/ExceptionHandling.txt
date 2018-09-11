@@ -1,0 +1,135 @@
+Exception
+------------
+Exceptions are runtime errors that cause abnormal program/thread termination.
+
+Exception Handling
+------------------
+Exception Handling is the mechanism to protect program and its threads from abnormal termination.
+
+To implement Exception Handling
+1) Enclose the statements, that are likely to raise exceptions, in a try block.
+2) Associate one to many catch blocks with the try.
+3) Optionally associate a finally block.
+
+try block
+----------
+try block encloses the program statements.
+System monitors the code in try for exceptions.
+If an execption occurs in try then normal program flow gets interrupted and 
+program control is transferred to a corresponding catch block for handling.
+
+catch 
+-------
+A catch block is an exception handler.
+It executes only when an execption corresponding to the one it handles gets raised.
+It neutralizes the current exception and makes the system resume with 
+normal execution of code ahead.
+
+finally
+-------
+finally block hosts program code that
+must execute in all cases.
+1) Case no exception occurs.
+2) Case exception occurs and gets handled.
+3) Case exception occurs but doesn't gets handled.
+
+When some resource is allocated in try then it can be deallocated in finally.
+
+
+throws 
+---------
+Methods of a class may collectively contribute towards the processing of an operation.
+In other words an operation is performed by a set of methods.
+Such operations are like transactions that must succeed or fail as a unit.
+
+In such cases if exception raises in a method and is handled locally then :
+1) Some statements that get skipped will not result.
+2) Method will complete successfully because the error gets neutralized.
+
+When next operation relies on the result which did not generate 
+in the previous operation then even more critical errors get generated.
+
+To avoid such issues dependency of operations on one 
+another must be analyzed and successful completion must 
+be ensured only if a method generates the desired results.
+
+Hence for the methods that form a transaction the 
+exceptions must not be handled locally but must be 
+transferred to the caller method.
+
+This is done using throws statement.
+
+"throws" statement is a notification to a caller method, 
+that the method may raise exceptions but wont handle
+them, instead the same would be transferred on to the 
+caller method.
+And hence the exception handling be performed by the 
+caller method.
+
+Checked and Unchecked Exceptions
+-------------------------------
+Compiler classifies exceptions as :
+1) Checked Exceptions
+2) UnChecked Exceptions
+
+Checked Exceptions 
+-------------------
+Checked Exceptions are exceptions for 
+which if handling is not done then the
+compiler raises errors and stops the build.
+
+A Checked Exception would propogate
+only if throws is used.
+
+
+UnChecked Exceptions 
+---------------------
+UnChecked Exceptions are exceptions 
+for which if handling is not done yet 
+the compiler allows the build.
+
+An Unchecked Exception would auto propogate
+(even without throws).
+
+User Defined Exceptions
+-----------------------
+Java allows creation of user defined exception 
+by definition of a class that extends Exception.
+
+An application creates it own exceptions to 
+handle logical issues corresponding to it.
+
+It is the responsibility of the application code to :
+1) Identify a logical issue.
+2) Raise an exception.
+
+To raise an exception :
+1) Create object of Exception or of its sub class.
+2) throw <object>
+
+throw 
+-------
+throw statement is used to generate (raise) an exception.
+It takes the syntax :
+  throw <object of Exception or its sub class>
+
+Generic Exception Handler
+------------------------
+Exception being the used super class for exceptions in Java.
+
+(Throwable class is the super class for all exceptions in Java. 
+Refer Throwable Hierarchy.png)
+
+Also known that a super class reference can refer to 
+objects of itself as well of all of its sub classes.
+
+So a catch block that uses Exception reference can 
+be used to handle all possible exceptions.
+
+Such a catch block is known as "generic exception handler".
+
+For a try one exception can be handled only once.
+i.e. duplicate catch handlers are not allowed for a try.
+
+Hence if defined the generic exception handler catch block, 
+must be the last catch in the set of catch blocks for a try.

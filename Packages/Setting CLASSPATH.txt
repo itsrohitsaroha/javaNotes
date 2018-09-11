@@ -1,0 +1,32 @@
+Identify the parent directory of the package directory : 
+Say :
+ C:\Java\Packages
+
+This location be set/concatenated in CLASSPATH
+
+It can be done in 2 ways :
+
+1) As a compile and execution option
+javac -classpath "%CLASSPATH%;LOCATION" NameOfProgram.java
+java -classpath "%CLASSPATH%;LOCATION" NameOfProgram
+
+
+2) As OS level Environment Variable
+
+Right Click on "This PC"
+Select Properties
+Select Advanced
+Select Environment Variables
+Under System Variables
+Find CLASSPATH and Edit
+  Name : CLASSPATH
+  VALUE : <existing>;LOCATION OF  FOLDER
+
+If CLASSPATH is not found then NEW
+  Name : CLASSPATH
+  VALUE : .;LOCATION OF FOLDER
+
+FYI
+-----
+CLASSPATH must always have a . (dot) set in it
+It represents current working directory.

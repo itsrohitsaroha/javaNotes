@@ -1,0 +1,36 @@
+A java class, generally consists data members and methods.
+The data members and method can be categorized as:
+* static 
+* non static
+
+non static data members
+-----------------------
+* Data members of a class are by default non static.
+* A non static data member of the class is allocated as a member inside every object of the class.
+* Its life is equal to the life of the object. 
+* It is accessible through object only.
+
+
+static data members
+---------------------
+* Data members of a class can be declared as static.
+* A static data member of the class is allocated once and is not a member inside any object of the class.
+* Its life is equal to the life of the class. 
+* It is accessible through class reference.
+
+
+non static methods
+-------------------
+* Methods of a class are by default non static.
+* It requires an object of the respective class for invokation.
+* It can directly access all other members of the class.
+
+static methods
+----------------
+* Methods of a class can be declared as static.
+* It doesnt require any object for invokation. Instead it is called using the class reference.
+* It can directly access only the other static members of the class.
+* If a static method is to access non static members of the class then it must get/create an object of the class and through the object do the access.
+
+
+Note : In Java, local variables cannot be declared as static. 

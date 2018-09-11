@@ -1,0 +1,53 @@
+Network
+---------
+A network is a communication channel established 
+between inter connected computers/devices.
+
+Network Programming
+---------------------
+Network programming is creating applications that 
+host and consume services across a network.
+
+A networked application is made up of 2 modules :
+* Server
+* Client
+
+Server module is the application which host services 
+across a network.
+
+Client module is the application which consumes services 
+across a network.
+
+Role of a Server
+-----------------
+1) Define a service. 
+2) Open a port.
+3) Create a thread for accepting connections.
+4) Accept client connections.
+5) On connection, create a new thread to do processing.
+6) Go to step 4) or to step 7)
+7) Close the port.
+
+
+Role of a Client
+------------------
+1) Request connection
+2) Send input
+3) Fetch output
+4) Render the output
+5) Goto step 2) or 6)
+6) Close the connection
+
+More N/W related terms
+------------------------
+Port : A port is a connection end point.
+A port is represented by a positive whole
+number (ideally in range 0-65535).
+Port number 0 is used by the OS for internal purpose.
+Port number 1-1024 are used by the OS for well known services.
+A server module is free to utilize port numbers in range 1025-65535.
+An open port cannot be reopend.
+
+
+Socket : A Socket is a bidirectional communication end point.
+It is used for data transfer between the Server and the Client module. 

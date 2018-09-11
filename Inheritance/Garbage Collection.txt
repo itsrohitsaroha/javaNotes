@@ -1,0 +1,45 @@
+Garbage Collection
+--------------------
+In Java, objects and arrays are dynamically
+allocated in the heap segment of RAM, using
+the operator "new".
+They are accessible through a "reference".
+
+Across the program, references to an array
+or an object get created and dropped.
+Ideally a reference gets dropped due to :
+1) Its life getting over.
+2) Overwriting
+
+Once all references to an object or an array
+get dropped then it is termed as "unreferenced".
+
+Java's runtime environment has a mechanism
+for concurrent scanning of heap segment of RAM.
+It detects "unreferenced" objects or arrays.
+It deallocates them and recovers the memory for 
+reuse by the system.
+
+It is known as "Garbage Collection" mechanism.
+
+Object DeAllocation Process
+---------------------------
+In Java, every class extends the Object
+class, by default.
+From Object every class gets a method : finalize().
+A class may override the finalize() method.
+to have the last processing on the object, just 
+before it is removed from memory by the garabage 
+collection mechanism.
+
+Invokation
+----------
+The concurrent running thread that performs
+Garbage Collection is termed as the "finalizer"
+thread.
+It is a high priority thread.
+After detection of unreferenced objects it
+1) Invokes a finalize() method on every object.
+2) Deallocates and recovers the memory.
+
+ 

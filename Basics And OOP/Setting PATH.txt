@@ -1,0 +1,17 @@
+Identify the Java installation folder : 
+Say, C:\Program Files\Java\jdk1.8.0_91\bin
+
+This location be set in PATH
+
+Right Click on MyComputer / Computer / ThisPC
+Select Properties
+Select Advanced
+Select Environment Variables
+Under System Variables
+Find PATH and Edit
+  Name : PATH
+  VALUE : <exists>;LOCATION OF JAVA BIN FOLDER
+
+If PATH is not found then NEW
+  Name : PATH
+  VALUE : LOCATION OF JAVA BIN FOLDER

@@ -1,0 +1,97 @@
+Stream
+A stream is a channel of data transfer 
+across inter connected devices.
+
+Classification
+A stream may be classified as :
+ Unidirectional
+ Bidirectional
+Accordingly it will allow transfer of data.
+Unidirectional streams may be input or output streams.
+Bidirectional streams are io streams.
+
+To utilize a stream :
+1) Open it (Establish the channel). 
+2) Read / Write (Data Transfer).
+3) Close it (Deallocate the channel).
+
+Standard Streams
+There are 3 streams that are auto managed 
+for a Java application.
+A program doesnt need to open or close them, 
+but simply needs to read/write.
+
+The streams are :
+ Input Stream
+ Output Stream
+ Error Stream
+
+Input Stream
+Connects the standard input device (keyboard) 
+and the application.
+A Java application utilizes the Input stream 
+through a predefined object : System.in
+(System.in is an object of class java.io.InputStream)
+
+
+Output Stream
+Connects the standard output device (monitor) 
+and the application.
+A Java application utilizes the Output stream 
+through a predefined object : System.out
+(System.out is an object of class java.io.PrintStream)
+
+Error Stream
+Connects the standard output device (monitor) 
+and the application.
+A Java application utilizes the Error stream 
+through a predefined object : System.err
+(System.err is an object of class java.io.PrintStream)
+
+
+Data Transfer through stream
+-------------------------------
+Utilization of streams is the read/write
+action causing the data transfer between
+the devices.
+
+Java provides numerous methods for 
+read/write operations on streams.
+
+Input Operations
+--------------------
+int read()
+* fetchs one byte of data from the input stream.
+* returns the ASCII value of the byte.
+* returns -1 if EOF is encountered.
+* read() blocks the program control if input data is not available for fetch.
+* read() raise IOException which the caller must handle.
+
+int read(byte[])
+* fetchs n bytes of data from the input stream. "n" is the smaller of array size or bytes available in the stream.
+* returns n, the ASCII values of the bytes are loaded into the array.
+* returns -1 if EOF is encountered.
+* It blocks the program control if input data is not available for fetch.
+* It raise IOException which the caller must handle.
+
+int available()
+* Returns the number of bytes available in the input stream
+
+skip(long)
+* Advances the read position by given number of bytes, skipping the intermediate content.
+
+Output Operations
+--------------------
+write(int)
+* write writes one byte of data into the output stream.
+* It receives the ASCII value of the data as parameter.
+
+write(byte [], int, int)
+* write writes n bytes of data into the output stream.
+* It receives as parameter:
+  1) byte array containing data
+  2) start index for writing
+  3) length to write
+
+flush()
+* flush ensures transfer of the buffered data towards the target device.

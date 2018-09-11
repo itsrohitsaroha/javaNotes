@@ -1,0 +1,73 @@
+Q) Explain the life cycle of a Java application?
+A) If the Java application is single threaded then its life is defined by the main method.
+But if the application is multi threaded then its life is as long as the last non daemon thread is active.
+
+Q) Explain the difference between the command line arguments for C and Java?
+A) There are following difference between the command line arguments for C and Java
+1) main take 2 possible signatures in C where as in Java main has 1 preset signature. 
+2) Program name is the first command line argument in C where as in Java program name is not a part of command line arguments.
+3) Hence when no command line arguments are passed then in C the minimum size of command line array is 1 whereas in Java it is 0.
+
+Q) Does Java allow methods to have the same name as of the class?
+A) YES. Their signature includes the return type specification and 
+this helps the system differentiate between such methods and the 
+constructors.
+
+Q)A constructor doesnt have a return type?
+A) FALSE. It is that we dont specify the return type for the constructor.
+It is managed by the system because the use of constructor and operator new is fused.
+FYI : "return" statement can be used in the constructor. It wont have any value associated.
+
+
+Q) Why no copy constructors in Java?
+A) Copy constructors are used in languages where objects 
+are passed by value.
+Their purpose is to perform a deep copy while 
+object cloning, overcoming the systems shallow 
+copy method.
+In Java, the objects are passed by reference 
+so their cloning primarily doesnt come into picture.
+Java has a different facility to clone objects.
+
+Q) What are the differences between the non static initializer block and the constructor?
+A) * Non static initializer block has no signature where as the constructor takes a special signature.
+* A class may have multiple non static initializer blocks and even multiple constructors.
+On object creation all the non static initializer blocks execute and only one constructor executes.
+* Non static initializer runs before the constructor.
+* A non static initializer block cannot take any parameters whereas a constructor can have parameters.
+
+
+Q) As there is operator new to allocate objects in Java, 
+so is there some delete like operator or statement?
+A) No.  The objects /arrays are allocated in heap 
+segement of RAM. They are identified and used through 
+their references. Once all references to an object 
+or an array get dropped then it is termed as "unreferenced" 
+and such unreferenced memory blocks are automatically 
+detected and deallocated by JVM's Garabage Collection 
+Mechanism.
+
+Q) Can derived class have a data member of the 
+same name as of an inherited member?
+A) Yes. But due to this shadowing would occur. 
+All usages of the identifier would map with the 
+definition of the derived class. To utilize the 
+inherited member qualifier "super" would be required.
+
+Q) Can "abstract" method be declared as "final"?
+A) No. final methods are methods that cannot be overridden, whereas the abstract methods are methods that are overridden for use. The two terms contradict.
+
+Q) Can "abstract" method be declared as "static"?
+A) No. abstract methods are ment to be overridden where as static methods cannot be overridden. Redefining a static method in the derived class is not considered as overriding because 
+1) static methods donot take caller object.
+2) determining binding of overridden functions is based on the caller object.
+
+Q) Does Java support multiple inheritance?
+A) Java supports multiple inheritance of interfaces.
+Also it allows a class to implement multiple interfaces.
+But in no way a class is allowed to inherit multiple super classes.
+
+Q) What is the difference between the default and the static methods of an interface?
+A) A default method of an interface can be used by the object of implementing class. Even the implementing class can override it.
+A static method of an interface can be used through the interface reference. The implementing class cannot override it.
+

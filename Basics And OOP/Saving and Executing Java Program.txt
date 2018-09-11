@@ -1,0 +1,29 @@
+Saving a java program
+----------------------------------
+* A file can have more  than classes in it.
+* A file can have only one public class in it.
+* If a file has a public class then the file must be saved with the name of the public class and extension ".java"
+* If a file has no public class then the file can be saved with a name of choice and extension ".java"
+
+
+Compiling a java program
+---------------------------------------
+To compile a java program use the java compiler named "javac".
+It is available in bin folder of installation.
+
+Compiling a java program creates binary executable files per class.
+Compiled binary executable file is termed as "bytecode".
+Bytecode File has name = Name of the class and extension = .class
+
+
+Syntax:
+dos> javac <NameOfJavaProgram.java>
+
+Executing a java program
+-------------------------------------
+The java tool launches a Java application. 
+It does this by starting a Java runtime environment, 
+loading a specified class, and invoking that class's main method.
+
+Syntax:
+dos> java <NameOfByteCodeThatHasMain>

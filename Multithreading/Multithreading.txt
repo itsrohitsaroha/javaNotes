@@ -1,0 +1,237 @@
+An application is designed and
+developed to perform a task.
+
+A task is a collection of multiple sub tasks.
+
+The application may execute the 
+sub-tasks sequentially or concurrently.
+
+Accordingly it will be referred as a 
+single-threaded or a multi-threaded 
+application.
+
+Implementation
+---------------
+By default every application is single-threaded.
+The one thread it has is the "main" thread.
+
+A single threaded application uses the one 
+available thread to invoke all the sub tasks.
+Hence the sub tasks are performed sequentially.
+
+A multi threaded application creates custom 
+threads and makes them execute sub tasks.
+By this approach concurrency is achieved. 
+
+Java supports developement of multi threaded 
+applications in 2 ways :
+
+1) By extending Thread class.
+2) By using Thread object and implementing Runnable interface.
+
+Extending Thread class
+------------------------
+1) Define a class that extends the Thread class.
+2) Every object of the sub class is a custom thread.
+3) Every custom thread is inactive by default. It must be activated once by calling start() on the object.
+4) On activation the custom thread begins concurrent execution of run().
+5) Being a sub class it has inherited a run() method from the super class Thread. The inherited run() has empty definition. Override it to assign sub tasks to be executed concurrently.
+6) run() defines the life cycle of thread. Once run() is complete thread goes into dead state and cannot be reactivated.
+
+Using Thread object and Implementing Runnable 
+-------------------------------------------
+1) Define a class that implements Runnable interface.
+2) Hence override the interface method "public void run()". It happens to be the threads life cycle method as well.
+3) Create a Thread object ( local or as a member)
+4) Activate the thread 
+5) It begins concurrent execution of the "run()" method.
+
+
+Non Daemon and Daemon Threads
+---------------------------------
+Java classifies threads as 
+1) Non Daemon (default)
+2) Daemon 
+
+Non Daemon
+--------------
+Non Daemon thread keeps the JVM
+alive (working) until all of its alloted
+jobs get over.
+
+Once alloted jobs are over or there
+is an unhandled exception, it enters
+dead state.
+
+When all non daemon threads enter
+dead state the java application terminates.
+
+Daemon
+------------
+Daemon threads are threads that
+ideally perform some background
+operation.
+
+They dont have control on life of the
+java application.
+
+They continue to run as long as
+there is no unhandled exception 
+and other non daemon threads are 
+alive.
+
+If all other non deamon threads get
+over, java application and the daemon
+threads would terminate.
+
+Life of a Java Application 
+--------------------------
+Life of a Java Application is controlled
+by the following factors :
+1) Call to System.exit();
+2) Exceptions
+3) All Non Daemon threads getting into dead state.
+
+Threads must be set as daemon by
+using the method :
+    setDeamon(boolean)
+It must be done before thread activation.
+
+
+Thread Join
+----------------
+A thread join suspends the current
+thread (one that calls joins) until a
+target thread completes.
+
+Example :
+There are two threads ThreadA and ThreadB.
+At line number n, ThreadA executes
+a call like :
+   ThreadB.join()
+This would suspend ThreadA until
+ThreadB completes.
+
+If ThreadB was already complete then
+join would not cause any suspension.
+
+A thread that is suspended by join
+can be brought out of join and resumed
+by :
+1) InterruptedException.
+Such an interrupt must be raised by
+some other thread.
+2) Timed join
+i.e. a call like : ThreadB.join(1000); //milli seconds
+
+FYI
+------
+Improper use of join may cause application deadlock.
+
+
+Shared Resource
+------------------
+A shared resource is a hardware 
+or an object that is being used by
+multiple threads or processes.
+
+A shared resource may or may not
+support concurrency.
+
+If a shared resource doesnt support
+concurrent usage then the code 
+modules that use it must be declared
+as "Cirtical Sections".
+
+Java provides "synchronized" statement
+to define "Critical Sections" of code.
+
+When a method/block of code is
+declared as "synchronized" then only 
+one thread is allowed to execute it 
+at a time.
+
+Other threads that try to execute
+a synchronized method/block of code
+concurrently using the same object,
+get suspended.
+
+They resume sequentially prioritywise
+or sequencewise once the owner thread 
+comes out of the synchronized method 
+or block of code.
+
+HOW IT WORKS?
+--------------------
+In Java, Object class is the default
+super class for all the classes.
+
+Object class defines a monitor (binary semaphore).
+So by inheritance then monitor is 
+available in all the classes.
+
+But the object monitor is "inactive" by default.
+
+It gets activated for the object if a 
+synchronized method or block of code 
+is executed.
+
+Once active the monitor (binary semaphore)
+allows only one thread to execute the method
+or block of code at one  time.
+
+By this sequential access of the shared 
+resource is achieved.
+
+Thread Sleep
+---------------
+Sleep method of class Thread is
+used to introduce a delay in the
+execution of the current thread.
+
+By Sleep the current thread ceases
+execution for specified time period.
+
+Accuracy of time period depends on
+Systems timers and schedulers.
+
+Sleep may raise InterruptedException
+which the caller must handle.
+
+
+Thread Yield
+----------------
+Thread yield causes current thread 
+to voluntarily give up execution for 
+current time quantum, allowing other 
+threads to use the CPU.
+
+It is an approach followed to apply
+co-operative multitasking.
+
+Thread Priority
+---------------
+Thread Priority decides which of
+the multiple active threads would
+access a resource first.
+
+Java applies thread priorities in
+range 1 to 10.
+1 is the least priority.
+5 is the normal priority. (default)
+10 is the maximum priority. 
+
+Java allows setting a threads
+priority using the method :
+    setPriority(int)
+
+And detting a threads priority 
+using the method :
+    int getPriority()
+
+FYI
+-----
+Changing a threads priority affects
+the behaviour of the application.
+Because some threads would get
+more execution and other would starve.

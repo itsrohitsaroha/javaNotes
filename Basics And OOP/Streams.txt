@@ -1,0 +1,36 @@
+Stream
+A stream is a channel of data transfer across inter connected devices.
+
+Classification
+A stream may be classified as :
+ Unidirectional
+ Bidirectional
+Accordingly it will allow transfer of data.
+Unidirectional streams may be input or output streams.
+Bidirectional streams are io streams.
+
+To utilize a stream :
+1) Open it (Establish the channel). 
+2) Read / Write (Data Transfer).
+3) Close it (Deallocate the channel).
+
+Standard Streams
+There are 3 streams that are  auto managed for a Java application.
+A program doesnt need to open orclose them, but simply needs to read/write.
+
+The streams are :
+ Input Stream
+ Output Stream
+ Error Stream
+
+Input Stream
+Connects the standard input device (keyboard) and the application.
+A Java application utilizes the Input stream through a predefined object : System.in
+
+Output Stream
+Connects the standard output device (monitor) and the application.
+A Java application utilizes the Output stream through a predefined object : System.out
+
+Error Stream
+Connects the standard output device (monitor) and the application.
+A Java application utilizes the Output stream through a predefined object : System.err

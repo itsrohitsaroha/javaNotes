@@ -1,0 +1,47 @@
+Package
+--------
+A package is a collection of
+ 1) classes
+ 2) enumerations
+ 3) interfaces
+ 4) nested packages.
+
+It defines an application (Project) or a library (API).
+
+To make a package :
+* Make a directory of the same name as of the package.
+
+To add classes, interfaces, ... in a package :
+* Define them with package statement as their first statement.
+* Save them in the package directory.
+(If the class, ... is public then it must be saved in a file that takes the same name as of the class, ...)
+
+To use a package :
+* Its parent directory location must be set in CLASSPATH.
+* It must be imported.
+* Its public classes, enumerations and interfaces can be used.
+
+Nested Packages
+-----------------
+A nested package is a package inside a package.
+Nested packages are used to create a meaningful hierarchy of class, interfaces,....
+Example 
+Case : Without nested package
+  Vehicle {car, bike, scooter, truck}
+Case : With nested package
+  Vehicle { twoWheelers { bike, scooter} fourWheelers { car, truck} }
+
+To create a nested package 
+-------------------------
+Create a sub directory (nested folder) of the same name as of the nested package.
+
+To put classes, interfaces, ... in the nested package
+---------------------------------------------
+1) Define the class, interface, ... with nested package statement as its first statement.
+2) Save the class, interface, ... in the nested package directory.
+
+
+FYI
+-----
+If a java class is not put in any package then the system considers
+it to be in a no-name package that spans the current directory.

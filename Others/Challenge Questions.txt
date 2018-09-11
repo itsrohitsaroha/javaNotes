@@ -1,0 +1,69 @@
+1) Implement Bubble Sort followed by Binary Search on single dim. int array
+
+2) Accept a value as command line argument. Find the next prime number to that value.
+(hint : int x = Integer.parseInt(args[0]); )
+
+3) Implement (Square) Matrix Transpose.
+
+4) Implement Stack using Array.
+
+5) Using singleton pattern design a Logger classes. 
+It serves a global logging access point.
+(Log messages using System.err and ahead use files).
+Design 2 more classes that use the common
+object of Logger for outputting errors while
+their operations (functions) are performed (run).
+
+6) Implement a N Queens Problem using backtracking technique.
+The board must hold Queen Objects.
+The display method must output:
+Coordinates, QueenName, KillingCapacity and whether the queen is MainQueen or not.
+
+7) Create a Binary Search Tree in Java.
+It must have create() and inorder() methods.
+Implement recursive inorder.
+Define a derived class D_BST.
+It overrides the inorder() and provides non recursive definition.
+
+From main() call a test() method that takes super 
+class reference to accept object of BST and of 
+D_BST.
+In test() call create and inorder.
+Study the executing methods. 
+
+
+8)Make a package Searcher
+* Define and put a class Search with methods :
+ sequentialSearch
+ binarySearch
+ fibonacciSearch
+* Define and put a non public class Sort in it that would have method
+  bubbleSort() It would be internally called by binarySearch
+* Define a class that imports the package
+Uses various methods of Search 
+to search values in an int array.
+
+9) Using two threads (main, custom thread) add even and odd numbers of a large array.
+
+10) Using thread coordination convert the sync.java to output HELLO SHARED RESOURCE in order.
+
+11) Open a file for reading. Count the number of words in the file.
+
+12) Take a word (String) from user. Find it in a file and return true or false. 
+
+13) Implement a file search by name. It recursively finds a file in a directory and sub directories. 
+
+14) Implement a Java program that copies all images of a drive into a preset backup folder.
+
+15) Pass a file name from the client. If in a fixed directory the file exists then server sends file content to the client 
+otherwise file not available message. If available then the client receives and store the file locally.
+
+16) Create a GUI application to add/subtract/multiply/divide 2 numbers.
+
+17) Create a image slider using Jpanel(grid 1*5), 5 labels ,10 imageicons and thread.
+
+18) Study the external and the heap sort (code attached).
+
+19) Develop a GUI based Tic Tac Toe application.
+
+20) Read a folder content. Water mark all the images in it with text : "THESE ARE MINE"

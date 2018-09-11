@@ -1,0 +1,28 @@
+java.io.File allows represents files,
+directories and drives of the system.
+
+Various methods of the class File allow 
+operations on the meta data of the 
+represented file or directory or the drive .
+
+exists() : returns true if the file/directory or drive exists.
+isFile() : returns true if the object refers to a file.
+isDirectory() : returns true if the object refers to a directory or drive.
+list() : returns a String array filled the contents of the directory represented by the object. If the object refers to a file then it returns null.
+getAbsolutePath() : returns the absolute path (String) for the file or directory represented by the object.
+getName() : returns the name (String) of the file or directory represented by the object.
+getParent() : returns the absolute path of the parent directory (String) of the file or directory represented by the object.
+lastModifed() : returns the milliseconds between the EPOC date and the modified date.
+canRead() : returns a boolean representing read permission
+canWrite() : returns a boolean representing write permission
+canExecute() : returns a boolean representing execute permission
+isHidden() : returns a boolean representing hidden status
+delete() : permanently removes a file or an empty directory and returns a boolean status.
+mkdir() : creates a directory of the representing object 
+mkdirs() : creates directory and the sub directory hierarchy of the representing object 
+createNewFile() : creates an empty file of the representing object 
+renameTo(File) : rename current file to the new file as represented by the parameter
+listRoots() : returns a File array represnting root drives of the system.
+getTotalSpace() : returns the total space in bytes
+getFreeSpace() : returns the free space in bytes
+getUsableSpace() : returns the usable space in bytes

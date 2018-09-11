@@ -1,0 +1,246 @@
+Inheritance
+---------------
+Inheritance is an OOP concept that allows 
+definition of derived entities from existing 
+ones.
+
+The derived entity gets:
+* Code
+* Data
+* Compatibility
+from the existing one.
+
+The derived entity is host for extended code and data.
+
+Java Terminology
+------------------
+The existing entity that is the inherited one, 
+is termed as the super class.
+
+The derived entitiy that is the inheriting one, 
+is termed as the sub class.
+
+"extends" keyword is used to implement inheritance 
+in Java.
+
+FYI:
+ One class can inherit one super class only.
+ One interface can inherit multiple super interfaces.
+ 
+Inheritance of CODE
+---------------------
+Java allows inheritance, by which the sub class 
+can access all non private code (methods) of the 
+super class, through its own object.
+
+The sub class may :
+1) Use the inherited methods.
+2) Override the inherited methods and then use them.
+3) Define extended methods and use them.
+
+Method Overriding
+------------------
+Method Overriding is redefining a non static 
+method in the sub class, keeping the methods 
+signature same.
+
+The method can have a compatible return type.
+
+final method
+---------------
+A final method is a method that cannot be overridden.
+
+final class
+------------
+A final class is a class that cannot be inherited.
+
+
+Type Compatibility
+-------------------
+Inheritance creates Type Compatibility between 
+the super and the sub class.
+Type Compatibility allows a super class reference 
+to refer to an object of the sub class.
+(Reverse is not true).
+
+A super class reference that refers to an object 
+of the sub class can access the inherited and 
+overridden methods only.
+The extended methods of the sub class are not 
+accessible using the super class reference.
+
+Binding
+---------
+Binding is connecting a method call with a definition.
+It is the role of the compiler to perform binding.
+For binding the compiler uses a signature matching technique.
+
+Calls to constructors, methods, static methods, 
+overloaded methods are mapped by the compiler
+at compile time. 
+Hence cases of early binding.
+
+
+Runtime Binding
+-----------------
+When compiler encounters calls to overridden
+methods using a super class reference then it
+doesnt bind.
+
+The reasons being :
+1) Ability of super class reference to refer to object of self type and sub class as well.
+2) Multiple definition of method available due to overriding.
+
+Hence:
+At execution time, system encounters an unbound call.
+So system activates RTTI mechanism to detect the 
+type of object being refered by the super class reference.
+
+Next according to the type object the version of 
+the overridden method is selected and bound.
+
+This process of connecting a method call with the 
+methods definition is termed as Runtime Binding 
+or Late Binding or Dynamic Method Dispatch.
+
+
+Coupling 
+-----------
+Is the degree upto which a class knows about another class.
+
+Two classes may be 
+1) Tightly Coupled
+In this case a class directly uses reference to 
+another class and accesses many-all members 
+of the target class.
+
+Tight Coupling limits the class reference to refer 
+to one class only and hence the current class becomes 
+limited for the definitions of the methods.
+
+2) Loosely Coupled
+In this case a class uses interface/super class 
+reference to refer to another class and accesses 
+limited members of the target class.
+
+Loose Coupling allows the interface/super class
+reference to refer to any class in the hierarchy
+defined by the interface or the super class.
+
+Hence the current class can get different definitions 
+for the same method.
+
+Inheritance of Data
+---------------------
+By inheritance the sub class gets the data members 
+from the super class.
+
+System implements inheritance of data members 
+as object of the sub class is created.
+
+Known that object creation is a three step process.
+1) Memory Allocation
+2) Execution of non static initializer block.
+3) Execution of constructor.
+
+As the object of the sub class is created 
+1) A composite block of memory is allocated.
+It contains all the non static data members 
+of the super and the sub class.
+
+2) System executes the non static intitializer 
+block and the constructor of the super class.
+(They must initialize the super class data members.)
+
+3) Next the system executes the non static 
+intitializer block and the constructor of the sub class.
+(They must initialize the sub class data members.)
+
+Constructors on Creation of sub class objects
+------------------------------------------
+On creation of a sub class object 
+a composite block of memory is
+allocated. It contains data members
+of the super and the sub class.
+
+To initialize it the constructors
+of super and sub sub class both
+get executed in the order super
+class constructor first and the
+sub class constructor next.
+
+By default the parameter matching
+constructor of the sub class and the
+default constructor of the super
+class would execute.
+
+To make the system execute the
+parameter matching constructor of
+the super class, the sub class 
+constructor must pass parameters
+using the "super" as the first statement.
+(See the code).
+
+Inheritance and static members
+----------------------------
+Data members and methods of a class may be static.
+
+When a method is static then it doesnt require 
+any caller object for invokation hence it cannot 
+particiate in run time binding, which depends on 
+the type of object used for invokation.
+
+Hence the static methods are not overridden.
+
+When a data member is static then it is allocated 
+once for the class and all of its sub classes.
+
+static data members are accessed using the class reference.
+
+Their accessibility is controlled by the access specifiers.
+
+They are not inherited but may be accessible in derived 
+and non derived classes as per applied access specifier.
+
+
+Abstract
+----------
+Java allows declaration of methods and classes as "abstract".
+
+Abstract methods
+-----------------
+An abstract method is a method:
+ * With declaration (signature) only and not definition (body).
+ * That must be overridden by the sub classes.
+ * That makes the class abstract.
+
+Abstract class
+---------------
+An abstract class is a class:
+ * That cannot be instantiated.
+ * That must be inherited for use.
+ * That has ZERO to MANY abstract methods.
+
+Inheritance of Abstract Class
+----------------------------
+Known that by inheritance a sub class gets :
+ CODE 
+ DATA
+ COMPATIBILITY
+from the super class.
+
+As an abstract class is inherited the sub class along 
+with normal methods also inherits the abstract methods.
+
+Due to presence of abstract methods the sub class 
+also turns abstract.
+
+If the sub class overrides all the abstract methods 
+then it can become a normal class again.
+
+Q) Known that an abstract class  cannot be instantiated, 
+    can it have data members and constructors?
+A) YES.
+    Its data members would be the data members of the sub class.
+    Its constructors would be invoked as object of the sub class is created.
+    In short, all that an abstract class defines is for its sub classes.
